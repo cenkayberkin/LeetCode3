@@ -38,6 +38,7 @@
     <Compile Include="WordOps.cs" />
     <Compile Include="WordBreak2.cs" />
     <Compile Include="BstOp.cs" />
+    <Compile Include="ListOp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
