@@ -9,28 +9,21 @@ namespace LeetCode3
 	{
 		public static void Main (string[] args)
 		{
-			WordOps o = new WordOps ();
-			HashSet<string> set = new HashSet<string> ();
-			set.Add ("cat");
-			set.Add ("cats");
-			set.Add ("and");
-			set.Add ("sand");
-			set.Add ("dog");
+			TreeNode n1 = new TreeNode (1);
+			TreeNode n3 = new TreeNode (3);
+			TreeNode n5 = new TreeNode (5);
+			TreeNode n7 = new TreeNode (7);
+			TreeNode n10 = new TreeNode (10);
+			TreeNode n15 = new TreeNode (15);
 
-			WordBreak2 b = new WordBreak2 ();
-			var result = b.WordBreak ("catsanddog", set);
+			n7.left = n3;
+			n7.right = n10;
+			n3.left = n1;
+			n3.right = n5;
+			n10.right = n15;
 
-			foreach (var item in result) {
-				Console.WriteLine (item);
-			}
-
-//			Console.WriteLine (o.WordBreak ("aaaaaaa", set));
-
-//			Console.WriteLine (o.wordBreakAnother ("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", set));
-//			for (int i = 0; i < 1000; i++) {
-//				Test ();
-//					
-//			}
+			BstOp o = new BstOp ();
+			Console.WriteLine (o.KthSmallest(n7,6));
 
 		}
 
