@@ -11,6 +11,61 @@ namespace LeetCode3
 
 	public class BstOp
 	{
+		TreeNode root;
+
+		public void AddToBst(int num)
+		{
+			if (root == null) {
+				root = new TreeNode (num);
+			} else {
+				var newNode = new TreeNode (num);
+				AddToBst (root, newNode);
+			}
+		}
+
+		public void AddToBst(TreeNode root, TreeNode newNode)
+		{
+			if (root == null) {
+				return;
+			}
+
+			if (root.val <= newNode.val) {
+				if (root.right == null) {
+					root.right = newNode;	
+				} else {
+					AddToBst (root.right, newNode);
+				}
+
+			} else {
+				if (root.left == null) {
+					root.left = newNode;
+				} else {
+					AddToBst (root.left, newNode);
+				}
+			}
+
+		}
+
+		public TreeNode SortedArrayToBST(int[] nums)
+		{
+			SortedArrayToBST (nums, 0, nums.Length -1);
+			return root;
+		}
+
+		public void SortedArrayToBST(int[] nums,int lo,int hi) 
+		{
+			if (lo > hi) {
+				return;
+			}
+
+			int mid = (lo + hi) / 2;
+			this.AddToBst (nums[mid]);
+
+			SortedArrayToBST (nums, lo, mid - 1);
+			SortedArrayToBST (nums, mid +1, hi);
+
+		}
+
 		public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) 
 		{
 			int first = (int)Math.Min (p.val, q.val);

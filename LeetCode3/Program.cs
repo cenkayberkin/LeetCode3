@@ -29,9 +29,11 @@ namespace LeetCode3
 			n8.right = n9;
 
 			BstOp o = new BstOp ();
-			Console.WriteLine ("Result " + o.LowestCommonAncestor(n6,n2,n0).val);
+//			Console.WriteLine ("Result " + o.LowestCommonAncestor(n6,n2,n0).val);
+			int[] arr = new int[]{ 2,3,1};
+			ArrayOps arrayOp = new ArrayOps();
+			Console.WriteLine (arrayOp.FindMin(arr));
 
-		
 		}
 
 		public static int SingleNumber(int[] nums) {
