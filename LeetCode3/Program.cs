@@ -9,25 +9,29 @@ namespace LeetCode3
 	{
 		public static void Main (string[] args)
 		{
-//			TreeNode n1 = new TreeNode (1);
-//			TreeNode n3 = new TreeNode (3);
-//			TreeNode n5 = new TreeNode (5);
-//			TreeNode n7 = new TreeNode (7);
-//			TreeNode n10 = new TreeNode (10);
-//			TreeNode n15 = new TreeNode (15);
-//
-//			n7.left = n3;
-//			n7.right = n10;
-//			n3.left = n1;
-//			n3.right = n5;
-//			n10.right = n15;
-//
-//			BstOp o = new BstOp ();
-//			Console.WriteLine (o.KthSmallest(n7,6));
+			TreeNode n6 = new TreeNode (6);
+			TreeNode n2 = new TreeNode (2);
+			TreeNode n8 = new TreeNode (8);
+			TreeNode n0 = new TreeNode (0);
+			TreeNode n3 = new TreeNode (3);
+			TreeNode n4 = new TreeNode (4);
+			TreeNode n5 = new TreeNode (5);
+			TreeNode n7 = new TreeNode (7);
+			TreeNode n9 = new TreeNode (9);
 
-			int[] arr = new int[]{ 2,4,2,4,3};
-			Console.WriteLine (SingleNumber(arr));
+			n6.left = n2;
+			n6.right = n8;
+			n2.left = n0;
+			n2.right = n4;
+			n4.left = n3;
+			n4.right = n5;
+			n8.left = n7;
+			n8.right = n9;
 
+			BstOp o = new BstOp ();
+			Console.WriteLine ("Result " + o.LowestCommonAncestor(n6,n2,n0).val);
+
+		
 		}
 
 		public static int SingleNumber(int[] nums) {
